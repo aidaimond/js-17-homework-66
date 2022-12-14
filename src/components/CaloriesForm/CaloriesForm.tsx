@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Eating} from "../../types";
+import {Eating, EatingWithNumber} from "../../types";
 import {useNavigate, useParams} from "react-router-dom";
 import axiosApi from "../../axiosApi";
 import Spinner from "../Spinner/Spinner";
@@ -48,7 +48,7 @@ const CaloriesForm: React.FC = () => {
     if (id) {
       try {
         setUpdating(true);
-        await axiosApi.put<Eating>(`/calories/${id}.json`, meal);
+        await axiosApi.put<EatingWithNumber>(`/calories/${id}.json`, meal);
       } finally {
         setUpdating(false);
       }
@@ -56,7 +56,7 @@ const CaloriesForm: React.FC = () => {
     } else {
       try {
         setUpdating(true);
-        await axiosApi.post<Eating>('/calories.json', meal);
+        await axiosApi.post<EatingWithNumber>('/calories.json', meal);
       } finally {
         setUpdating(false);
         navigate('/');
