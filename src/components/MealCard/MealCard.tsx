@@ -1,9 +1,10 @@
 import React, {PropsWithChildren} from 'react';
-import {Eating} from "../../types";
+import {EatingWithNumber} from "../../types";
 
 interface Props extends PropsWithChildren {
-  eating: Eating;
+  eating: EatingWithNumber;
 }
+
 const MealCard: React.FC<Props> = ({eating, children}) => {
   return (
     <div className="m-2 border border-2 rounded p-4">

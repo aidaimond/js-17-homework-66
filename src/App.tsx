@@ -18,14 +18,13 @@ function App() {
           <Route path="/meals/new" element={(
             <CaloriesForm/>
           )}/>
-          <Route path="/edit/meal" element={(
+          <Route path="/edit/meal/:id" element={(
             <CaloriesForm/>
           )}/>
           <Route path="*" element={(
             <h1>Not found!</h1>
           )}/>
         </Routes>
-
       </main>
     </div>
   );

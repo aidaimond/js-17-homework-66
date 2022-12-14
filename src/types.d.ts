@@ -4,7 +4,13 @@ export interface Eating {
   calories: string;
 }
 
-export interface EatingMutation extends Eating {
+export interface EatingWithNumber {
+  meal: string;
+  description: string;
+  calories: number;
+}
+
+export interface EatingMutation extends EatingWithNumber {
 id: string;
 }
 
